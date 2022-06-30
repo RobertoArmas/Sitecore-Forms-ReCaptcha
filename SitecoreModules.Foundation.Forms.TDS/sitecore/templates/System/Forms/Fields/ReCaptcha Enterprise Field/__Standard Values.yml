@@ -1,0 +1,44 @@
+---
+ID: "f1204ced-a813-4b88-a65d-7561f016f382"
+Parent: "ecdd90a7-674c-48d1-9c77-9fe47aac5543"
+Template: "ecdd90a7-674c-48d1-9c77-9fe47aac5543"
+Path: /sitecore/templates/System/Forms/Fields/ReCaptcha Enterprise Field/__Standard Values
+DB: master
+SharedFields:
+- ID: "10e5829a-1943-4597-b9ee-406ce3d13e13"
+  Hint: Validations
+  Type: Treelist
+  Value: "{FA3C675C-79EB-4AB2-BD07-8CB8E4A2CBB9}"
+- ID: "589a7ade-81d4-4a60-b9e2-7eaf6ae8a563"
+  Hint: Field Type
+  Value: "{4BF736A9-DBF2-41C3-BEA2-13D7885EADD9}"
+Languages:
+- Language: "en-US"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220614T213318Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "aa9b27af-d112-4359-b4f8-606a93346fdf"
+    - ID: "a4b8cdfd-0607-47b8-b7e8-469f4bcdab7f"
+      Hint: Is Invisible Mode
+      Type: Checkbox
+      Value: 1
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20220614T213328Z

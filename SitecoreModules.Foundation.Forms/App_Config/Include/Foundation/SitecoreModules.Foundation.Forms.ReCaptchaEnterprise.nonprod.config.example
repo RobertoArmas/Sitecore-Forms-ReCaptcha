@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:env="http://www.sitecore.net/xmlconfig/env/">
+  <sitecore>
+    <settings env:require="Local">
+      <setting name="Foundation.Forms.ReCaptchaEnterprise.Api.Url" value="https://www.google.com/recaptcha/enterprise.js?render={0}" />
+      <setting name="Foundation.Forms.ReCaptchaEnterprise.Api.SiteVerify" value="https://recaptchaenterprise.googleapis.com/v1/projects/[PROJECT_ID]/assessments?key={0}" />
+      <setting name="Foundation.Forms.ReCaptchaEnterprise.PublicKeyV3" value="[PUBLIC_KEY_V3]" />
+      <setting name="Foundation.Forms.ReCaptchaEnterprise.PublicKeyV2" value="[PUBLIC_KEY_V2]" />
+      <setting name="Foundation.Forms.ReCaptchaEnterprise.ApiKey" value="[API_KEY_V3]" />
+      <setting name="Foundation.Forms.ReCaptchaEnterprise.Score" value="0.5" />
+    </settings>
+  </sitecore>
+</configuration>
