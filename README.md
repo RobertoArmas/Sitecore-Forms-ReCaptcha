@@ -6,7 +6,7 @@ You will find more info in the following link:
 
 ## Nuget Installation
 
-You can easily install Sitecore Forms Eloqua by adding a Nuget Package in your Project.
+You can easily install Sitecore Forms ReCaptcha by adding a Nuget Package in your Project.
 
 ```powershell
 PM> Install-Package SitecoreModules.Foundation.Forms
