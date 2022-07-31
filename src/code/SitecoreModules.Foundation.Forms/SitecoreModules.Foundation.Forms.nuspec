@@ -8,7 +8,7 @@
     <owners>Roberto Armas</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/RobertoArmas/Sitecore-Forms-Eloqua</projectUrl>
+    <projectUrl>https://github.com/RobertoArmas/Sitecore-Forms-ReCaptcha</projectUrl>
     <description>
       Compatible with Sitecore 10.2.0
       Requires .NET Framework 4.8
