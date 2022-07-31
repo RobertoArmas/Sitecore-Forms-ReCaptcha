@@ -16,8 +16,11 @@ PM> Install-Package SitecoreModules.Foundation.Forms
 
 ### Generate Api Keys and Duplicate Config File
 
-It is required to Generate
+To configure Google's reCaptcha integration, it is required to duplicate and remove .example extension to the following file `\Website\App_Config\Include\Foundation\SitecoreModules.Foundation.Forms.ReCaptchaEnterprise.nonprod.config.example`
 
+If you don't know how to generate keys refer to the following link: [reCaptcha Keys](https://cloud.google.com/recaptcha-enterprise/docs/keys)
+
+In the next table specify the values that you need to configure.
 | Setting | Value |
 |---|---|
 | Foundation.Forms.ReCaptchaEnterprise.Api.Url| https://www.google.com/recaptcha/enterprise.js?render={0}|
