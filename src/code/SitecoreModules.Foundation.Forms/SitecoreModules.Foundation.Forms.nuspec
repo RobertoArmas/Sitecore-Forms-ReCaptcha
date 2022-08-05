@@ -10,8 +10,8 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/RobertoArmas/Sitecore-Forms-ReCaptcha</projectUrl>
     <description>
-      Compatible with Sitecore 10.2.0
-      Requires .NET Framework 4.8
+      Compatible with Sitecore 9.1.1
+      Requires .NET Framework 4.7.1
 
       SitecoreModules.Foundation.Forms include an integration with Sitecore Forms and Google Recaptcha Enterprise Version
     </description>

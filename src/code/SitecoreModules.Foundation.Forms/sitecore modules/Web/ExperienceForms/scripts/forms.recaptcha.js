@@ -1,9 +1,37 @@
+$.validator.setDefaults({ ignore: ":hidden:not(.fxt-captcha-enterprise)" });
+/**
+ * Google Recaptcha
+ */
+var reCaptchaArray = reCaptchaArray || [];
+$.validator.unobtrusive.adapters.add("recaptcha", function (options) {
+    options.rules["recaptcha"] = true;
+    if (options.message) {
+        options.messages["recaptcha"] = options.message;
+    }
+});
+
+$.validator.addMethod("recaptcha", function (value, element, exclude) {
+    return true;
+});
+recaptchasRendered = false;
+var loadReCaptchas = function () {
+    for (var i = 0; i < reCaptchaArray.length; i++) {
+        var reCaptcha = reCaptchaArray[i];
+        if (reCaptcha.IsRendered === undefined) {
+            reCaptcha.IsRendered = true;
+            reCaptcha();
+        }
+    }
+};
 (function ($) {
     if (window.reCaptchaEnterprise != undefined) {
         document.addEventListener("DOMContentLoaded", (event) => {
             window.reCaptchaEnterprise.inputs.forEach((params) => {
                 var form = params.input.parentElement.parentElement;
-                $(form).find('input[type="submit"]').on("click",
+                var submitBtn = $(form).find('input[type="submit"]').length != 0
+                    ? $(form).find('input[type="submit"]')
+                    : $(form).find('button[type="submit"]');
+                submitBtn.on("click",
                     (e) => {
                         var targetItem = e.currentTarget;
                         var recaptchaTimestamp = targetItem.dataset.recaptchaTimestamp;
