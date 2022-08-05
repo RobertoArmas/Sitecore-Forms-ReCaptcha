@@ -36,7 +36,6 @@
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-      <HintPath>..\..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Constellation.Foundation.PackageVerification, Version=10.2.0.29227, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Constellation.Foundation.PackageVerification.10.2.0.29227\lib\net48\Constellation.Foundation.PackageVerification.dll</HintPath>
@@ -393,6 +392,7 @@
     <Compile Include="Models\Fields\ReCaptchaEnterpriseViewModel.cs" />
     <Compile Include="Models\ReCaptcha\ReCaptchaEnterpriseRequest.cs" />
     <Compile Include="Models\ReCaptcha\ReCaptchaEnterpriseResponse.cs" />
+    <Compile Include="Models\ReCaptcha\ReCaptchaStandardResponse.cs" />
     <Compile Include="Models\ReCaptcha\RiskAnalysis.cs" />
     <Compile Include="Models\ReCaptcha\TokenProperties.cs" />
     <Compile Include="Models\Validation\ReCaptchaEnterpriseValidator.cs" />
@@ -400,6 +400,7 @@
     <Compile Include="ServiceRegistration.cs" />
     <Compile Include="Services\IReCaptchaService.cs" />
     <Compile Include="Services\ReCaptchaEnterpriseService.cs" />
+    <Compile Include="Services\ReCaptchaStandardService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\packages\PutPackagesHere.txt" />
@@ -408,12 +409,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Foundation\Constellation.Foundation.PackageVerification.config.example" />
     <Content Include="App_Config\Include\Foundation\SitecoreModules.Foundation.Forms.config" />
     <Content Include="App_Config\Include\Foundation\SitecoreModules.Foundation.Forms.ReCaptchaEnterprise.nonprod.config.example" />
     <Content Include="App_Data\packages\SitecoreModules-Foundation-Forms-10.2.0.2207301.zip" />
+    <None Include="App_Config\Include\Foundation\Constellation.Foundation.PackageVerification.config.example" />
     <None Include="packages.config" />
     <None Include="SitecoreModules.Foundation.Forms.nuspec" />
+    <Content Include="sitecore modules\Web\ExpericeForms\scripts\forms.recaptcha.standard.js" />
     <Content Include="Views\FormBuilder\ReCaptcha\ReCaptchaEnterprise.cshtml" />
   </ItemGroup>
   <ItemGroup />
