@@ -38,51 +38,106 @@
         if (Model.RecaptchaModeInvisible)
         {
             <script src="@recaptchaApiUrl&hl=@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName"></script>
-            <script type="text/javascript">
-                if (window.siplastRecaptcha == undefined) {
-                    window.siplastRecaptcha = {
-                        publicKey: "@recaptchaPublicKey",
-                        inputs: []
-                    }
-                }
-                document.addEventListener("DOMContentLoaded", (event) => {
-                    window.siplastRecaptcha.inputs.push(
-                        {
-                            action: "homepage",
-                            input: window.document.getElementById('@fieldId')
+            if (Model.IsStandard)
+            {
+                <script type="text/javascript">
+                    if (window.reCaptchaEnterprise == undefined) {
+                        window.reCaptchaEnterprise = {
+                            publicKey: "@recaptchaPublicKey",
+                            inputs: []
                         }
-                    );
-                    grecaptcha.enterprise.ready(function() {
-                        grecaptcha.enterprise.execute("@recaptchaPublicKey", { action: 'homepage' }).then(function(token) {
-                            window.document.getElementById('@fieldId').value = token;
+                    }
+                    document.addEventListener("DOMContentLoaded", (event) => {
+                        window.reCaptchaEnterprise.inputs.push(
+                            {
+                                action: "homepage",
+                                input: window.document.getElementById('@fieldId')
+                            }
+                        );
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute("@recaptchaPublicKey", { action: 'homepage' }).then(function(token) {
+                                window.document.getElementById('@fieldId').value = token;
+                            });
                         });
                     });
-                });
 
-            </script>
+                </script>
+            }
+            else
+            {
+                <script type="text/javascript">
+                    if (window.reCaptchaEnterprise == undefined) {
+                        window.reCaptchaEnterprise = {
+                            publicKey: "@recaptchaPublicKey",
+                            inputs: []
+                        }
+                    }
+                    document.addEventListener("DOMContentLoaded", (event) => {
+                        window.reCaptchaEnterprise.inputs.push(
+                            {
+                                action: "homepage",
+                                input: window.document.getElementById('@fieldId')
+                            }
+                        );
+                        grecaptcha.enterprise.ready(function() {
+                            grecaptcha.enterprise.execute("@recaptchaPublicKey", { action: 'homepage' }).then(function(token) {
+                                window.document.getElementById('@fieldId').value = token;
+                            });
+                        });
+                    });
+
+                </script>
+            }
+            
         }
         else
         {
+            if (Model.IsStandard)
+            {
+                <script type="text/javascript">
+                    var reCaptchaArray = reCaptchaArray || [];
+                    reCaptchaArray.push(
+                        function() {
+                            var _captchaInput = window.document.getElementById('@fieldId');
+                            window.grecaptcha.render('@(fieldId)_wrapper',
+                                {
+                                    'sitekey': '@recaptchaPublicKey',
+                                    'callback': function(token) {
+                                        _captchaInput.value = token;
+                                    },
+                                    'expired-callback': function(args) {
+                                        _captchaInput.value = '';
+                                    }
+                                });
+                        }
+                    );
+                </script>
+                <script src="https://www.google.com/recaptcha/api.js?onload=loadReCaptchas&render=explicit&hl=@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName" async defer></script>
+            }
+            else
+            {
+                <script type="text/javascript">
+                    var reCaptchaArray = reCaptchaArray || [];
+                    reCaptchaArray.push(
+                        function() {
+                            var _captchaInput = window.document.getElementById('@fieldId');
+                            window.grecaptcha.enterprise.render('@(fieldId)_wrapper',
+                                {
+                                    'sitekey': '@recaptchaPublicKey',
+                                    'callback': function(token) {
+                                        _captchaInput.value = token;
+                                    },
+                                    'expired-callback': function(args) {
+                                        _captchaInput.value = '';
+                                    }
+                                });
+                        }
+                    );
+                </script>
+                <script src="https://www.google.com/recaptcha/enterprise.js?onload=loadReCaptchas&render=explicit&hl=@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName" async defer></script>
+      
+            }
 
-            <script type="text/javascript">
-                var reCaptchaArray = reCaptchaArray || [];
-                reCaptchaArray.push(
-                    function() {
-                        var _captchaInput = window.document.getElementById('@fieldId');
-                        window.grecaptcha.enterprise.render('@(fieldId)_wrapper',
-                            {
-                                'sitekey': '@recaptchaPublicKey',
-                                'callback': function(token) {
-                                    _captchaInput.value = token;
-                                },
-                                'expired-callback': function(args) {
-                                    _captchaInput.value = '';
-                                }
-                            });
-                    }
-                );
-            </script>
-            <script src="https://www.google.com/recaptcha/enterprise.js?onload=loadReCaptchas&render=explicit&hl=@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName" async defer></script>
         }
 
     }

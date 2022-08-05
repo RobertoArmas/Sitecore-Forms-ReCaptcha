@@ -467,6 +467,7 @@
     <Compile Include="Models\Fields\ReCaptchaEnterpriseViewModel.cs" />
     <Compile Include="Models\ReCaptcha\ReCaptchaEnterpriseRequest.cs" />
     <Compile Include="Models\ReCaptcha\ReCaptchaEnterpriseResponse.cs" />
+    <Compile Include="Models\ReCaptcha\ReCaptchaStandardResponse.cs" />
     <Compile Include="Models\ReCaptcha\RiskAnalysis.cs" />
     <Compile Include="Models\ReCaptcha\TokenProperties.cs" />
     <Compile Include="Models\Validation\ReCaptchaEnterpriseValidator.cs" />
@@ -474,6 +475,7 @@
     <Compile Include="ServiceRegistration.cs" />
     <Compile Include="Services\IReCaptchaService.cs" />
     <Compile Include="Services\ReCaptchaEnterpriseService.cs" />
+    <Compile Include="Services\ReCaptchaStandardService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\packages\PutPackagesHere.txt" />
@@ -486,10 +488,11 @@
     <Content Include="App_Config\Include\Foundation\SitecoreModules.Foundation.Forms.config" />
     <Content Include="App_Config\Include\Foundation\SitecoreModules.Foundation.Forms.ReCaptchaEnterprise.nonprod.config.example" />
     <Content Include="App_Data\packages\SitecoreModules-Foundation-Forms-10.2.0.2207301.zip" />
-    <None Include="App_Config\Include\Constellation\Constellation.Foundation.PackageVerification.config.example" />
+    <None Include="App_Config\Include\Foundation\Constellation.Foundation.PackageVerification.config.example" />
     <None Include="packages.config" />
     <None Include="SitecoreModules.Foundation.Forms.nuspec" />
-    <None Include="Views\FormBuilder\ReCaptcha\ReCaptchaEnterprise.cshtml" />
+    <Content Include="sitecore modules\Web\ExpericeForms\scripts\forms.recaptcha.standard.js" />
+    <Content Include="Views\FormBuilder\ReCaptcha\ReCaptchaEnterprise.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

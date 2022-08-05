@@ -8,7 +8,7 @@
                         var targetItem = e.currentTarget;
                         var recaptchaTimestamp = targetItem.dataset.recaptchaTimestamp;
                         if (!recaptchaTimestamp || Date.now() - recaptchaTimestamp > 60000) {
-                            grecaptcha.enterprise.execute(window.reCaptchaEnterprise.publicKey, { action: params.action }).then((token) => {
+                            grecaptcha.execute(window.reCaptchaEnterprise.publicKey, { action: params.action }).then((token) => {
                                 targetItem.dataset.recaptchaTimestamp = Date.now();
                                 params.input.value = token;
                                 targetItem.click();

@@ -29,6 +29,8 @@ namespace SitecoreModules.Foundation.Forms.Models.Fields
         public string CaptchaPublicKeyV2 => Settings.GetSetting("Foundation.Forms.ReCaptchaEnterprise.PublicKeyV2");
         public string CaptchaPublicKeyV3 => Settings.GetSetting("Foundation.Forms.ReCaptchaEnterprise.PublicKeyV3");
 
+        public string IsStandard => Settings.GetSetting("Foundation.Forms.ReCaptchaEnterprise.IsStandard");
+
         public void InitializeValue(FieldValueProviderContext context)
         {
         }

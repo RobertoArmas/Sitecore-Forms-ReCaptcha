@@ -8,7 +8,18 @@ namespace SitecoreModules.Foundation.Forms
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<IReCaptchaService, ReCaptchaEnterpriseService>();
+            var isStandard =
+                Sitecore.Configuration.Settings.GetBoolSetting("Foundation.Forms.ReCaptchaEnterprise.IsStandard",
+                    false);
+            if (isStandard)
+            {
+                serviceCollection.AddTransient<IReCaptchaService, ReCaptchaStandardService>();
+            }
+            else
+            {
+                serviceCollection.AddTransient<IReCaptchaService, ReCaptchaEnterpriseService>();
+
+            }
         }
     }
 }
